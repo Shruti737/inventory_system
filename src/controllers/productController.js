@@ -50,8 +50,12 @@ const getProducts = async (req, res, next) => {
 
     // Case-insensitive search by product name.
     if (search) {
-      where.name = { [Op.iLike]: `%${search}%` };
-    }
+  where[Op.or] = [
+    { name: { [Op.iLike]: `%${search}%` } },
+    { category: { [Op.iLike]: `%${search}%` } },
+    { description: { [Op.iLike]: `%${search}%` } },
+  ];
+}
 
     // Filter by category (case-insensitive exact match).
     if (category) {

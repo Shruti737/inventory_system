@@ -20,7 +20,7 @@ const register = async (req, res, next) => {
 
     // Check whether the email is already registered.
     const existingUser = await User.findOne({ where: { email } });
-    if (existingUser) {
+    if (existingUser) { 
       return res.status(409).json({
         success: false,
         message: 'Email already registered.',
@@ -52,7 +52,11 @@ const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ where: { email } });
+    const user =  await User.findOne({ where: { email } });
+    console.log('EMAIL:', email);
+console.log('USER:', user);
+console.log('PASSWORD FROM REQUEST:', password);
+console.log('HASH FROM DB:', user?.password);
     if (!user) {
       return res.status(401).json({
         success: false,
