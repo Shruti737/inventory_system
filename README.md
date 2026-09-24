@@ -2,6 +2,22 @@
 
 A simple REST API for managing products and creating orders, built as a Backend Developer Technical Assignment.
 
+## 🚀 Live API
+
+The application is deployed on Render and can be tested directly:
+
+**Base URL:** `https://inventory-system-69rg.onrender.com`
+
+You can test the APIs using the deployed URL without running the project locally.
+
+## 🧪 Quick Testing with Postman
+
+A ready-to-use Postman collection is included in the repository:
+
+```text
+postman/inventory-api.postman_collection.json
+```        
+
 ## Tech Stack
 
 * **Node.js**
